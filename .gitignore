@@ -1,0 +1,20 @@
+# Excel
+~$*
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Databricks
+.databricks/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Secrets
+.env
+*.env

@@ -18,3 +18,10 @@ Desktop.ini
 # Secrets
 .env
 *.env
+# Anotações pessoais
+ia/*.txt
+sql/*.txt
+ia/README.md
+
+# Cópia antiga do site
+WMS-Logistics-Analytics-site/

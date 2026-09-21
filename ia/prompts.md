@@ -48,7 +48,7 @@ Separar frequência de ocorrência e impacto operacional para apoiar a análise 
 
 ### Prompt
 
-> Transforme a estrutura técnica do projeto em uma documentação clara para um recrutador de tecnologia e dados, explicando o uso de Excel, Power Query, Power BI, DAX, Python, SQL, Databricks, Git e GitHub.
+> Transformar a estrutura técnica do projeto em uma documentação clara, explicando o uso de Excel, Power Query, Power BI, DAX, Python, Databricks e GitHub, bem como a integração dessas tecnologias no fluxo de Analytics.
 
 ### Objetivo do prompt
 

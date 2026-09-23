@@ -2,7 +2,7 @@
 
 Projeto de **Analytics aplicado à operação logística**, utilizando dados operacionais para transformar informações de uma operação de distribuição em **indicadores, análises e diagnósticos para apoio à decisão**.
 
-O projeto combina conceitos de **Logística, WMS, Dados, BI, Automação e Inteligência Artificial**, simulando uma aplicação prática que pode ser utilizada como apoio à gestão operacional.
+O projeto combina conhecimentos de **Logística, WMS, Dados, BI, Automação e Inteligência Artificial**, demonstrando uma aplicação prática e integrada de tecnologias voltadas à análise operacional.
 
 ## Objetivo
 
@@ -31,20 +31,21 @@ O projeto busca responder perguntas como:
 
 > **Quais ocorrências estão associadas aos pedidos atrasados?**
 
-A partir dessas respostas, os dados são transformados em informações que podem apoiar a análise e a tomada de decisão operacional.
+A partir dessas respostas, os dados são transformados em informações estruturadas para apoiar a análise e a tomada de decisão operacional.
 
 ## Solução desenvolvida
 
-O projeto utiliza diferentes tecnologias para trabalhar as informações em etapas complementares:
+O projeto utiliza diferentes tecnologias em etapas complementares:
 
 1. **Tratamento dos dados** utilizando Excel e Power Query.
-2. **Automação de atualização** utilizando VBA.
+2. **Automação da atualização** utilizando VBA.
 3. **Modelagem e análise** utilizando Power BI e DAX.
 4. **Análise exploratória** utilizando Python e Pandas.
-5. **Processamento de dados** utilizando Databricks, Python/PySpark e SQL.
-6. **Diagnóstico operacional** utilizando Inteligência Artificial.
-7. **Versionamento e documentação** utilizando Git e GitHub.
-8. **Publicação do projeto** utilizando GitHub Pages.
+5. **Consultas analíticas** utilizando SQL.
+6. **Processamento de dados** utilizando Databricks, Python e PySpark.
+7. **Uso de Inteligência Artificial** como apoio à análise e documentação.
+8. **Versionamento e documentação** utilizando Git e GitHub.
+9. **Publicação do projeto** utilizando GitHub Pages.
 
 ## Tecnologias utilizadas
 
@@ -80,27 +81,19 @@ O projeto utiliza diferentes tecnologias para trabalhar as informações em etap
       │ Power BI/DAX │       │ Python/Pandas│
       │ Indicadores  │       │ Análise      │
       └──────┬───────┘       └──────┬───────┘
-             │                      │
-             └──────────┬───────────┘
+             │                       │
+             └──────────┬────────────┘
                         ▼
               ┌─────────────────────┐
-              │ Databricks / PySpark│
-              │ Processamento       │
-              └──────────┬──────────┘
-                         ▼
-                    ┌─────────┐
-                    │  SQL    │
-                    │ Análises│
-                    └────┬────┘
-                         ▼
-              ┌─────────────────────┐
-              │ Diagnóstico         │
-              │ operacional         │
+              │ SQL / Databricks    │
+              │ Análise e           │
+              │ processamento       │
               └──────────┬──────────┘
                          ▼
               ┌─────────────────────┐
-              │ IA / Diagnóstico    │
-              │ executivo           │
+              │ IA                  │
+              │ Apoio à análise e   │
+              │ documentação        │
               └──────────┬──────────┘
                          ▼
               ┌─────────────────────┐
@@ -124,6 +117,19 @@ Entre os principais indicadores e análises do projeto estão:
 * análise por área;
 * identificação de pontos críticos.
 
+## Resultados da base analisada
+
+A base utilizada no projeto contém **3.000 pedidos** após o tratamento dos dados.
+
+Entre os principais indicadores apresentados no projeto estão:
+
+* **3.000** pedidos analisados;
+* **148** pedidos atrasados;
+* **95,03%** de SLA global;
+* **12,02 minutos** de tempo médio de processamento.
+
+Esses indicadores são utilizados como referência para as análises apresentadas no Excel e no Power BI.
+
 ## Dashboard
 
 O projeto possui um dashboard desenvolvido em **Power BI**, permitindo visualizar os principais indicadores operacionais e realizar análises por diferentes dimensões da operação.
@@ -140,21 +146,43 @@ A automação permite reduzir atividades manuais e tornar o processo de atualiza
 
 A etapa de Python utiliza **Pandas** para análise e exploração dos dados, permitindo complementar as análises realizadas no Power BI.
 
+Os arquivos relacionados à análise em Python estão disponíveis no diretório:
+
+```text
+/python
+```
+
+## SQL
+
+O projeto também utiliza **SQL** para demonstrar consultas analíticas aplicadas aos dados operacionais.
+
+Os arquivos SQL estão disponíveis no diretório:
+
+```text
+/sql
+```
+
 ## Databricks
 
 A etapa de Databricks utiliza **Python/PySpark e SQL** para demonstrar uma abordagem de processamento e análise de dados em ambiente de dados.
 
-## Inteligência Artificial
-
-A Inteligência Artificial é utilizada como apoio à interpretação dos resultados e elaboração de diagnósticos operacionais.
-
-Os prompts utilizados no desenvolvimento do projeto estão documentados no diretório:
+Os arquivos relacionados ao processamento estão disponíveis no diretório:
 
 ```text
-/ia/prompts.md
+/databricks
 ```
 
-A documentação permite reproduzir as etapas de utilização da IA no projeto.
+## Inteligência Artificial
+
+A Inteligência Artificial foi utilizada como ferramenta de apoio durante o desenvolvimento do projeto, incluindo análise, documentação, estruturação e exploração dos dados.
+
+Os prompts utilizados no projeto estão documentados no arquivo:
+
+```text
+/ia/prompt.md
+```
+
+A documentação permite consultar e reproduzir as principais instruções utilizadas durante o desenvolvimento.
 
 ## Estrutura do projeto
 
@@ -163,17 +191,25 @@ WMS-Logistics-Analytics/
 │
 ├── Excel/
 │   └── vba/
+│       ├── LogiAnalytics_Base_WMS_Dados tratados .xlsx
+│       └── WMS_Logistics_Analytics.xlsm
 │
 ├── databricks/
+│   └── WMS_Logistics_Analytics.py
 │
 ├── ia/
+│   └── prompt.md
 │
 ├── python/
+│   ├── analise_logistica.py
+│   └── WMS_Logistics_Analytics.py
 │
 ├── sql/
+│   └── consultas_analiticas.sql
 │
 ├── site/
 │
+├── WMS_Logistics_Analytics.pbix
 ├── index.html
 ├── script.js
 ├── style.css
@@ -196,31 +232,42 @@ A proposta é demonstrar como conhecimentos de **Logística + WMS + Dados + Tecn
 
 ## Perfil técnico demonstrado
 
-O projeto demonstra a aplicação integrada de conhecimentos em:
+### Logística
 
-**Logística**
-→ processos operacionais, indicadores, SLA, atrasos e análise de gargalos.
+Processos operacionais, indicadores, SLA, atrasos e análise de gargalos.
 
-**WMS**
-→ visão orientada a processos e dados de uma operação logística.
+### WMS
 
-**Dados**
-→ tratamento, transformação, análise e interpretação de dados operacionais.
+Visão orientada a processos e dados de uma operação logística.
 
-**BI**
-→ criação de indicadores, análises e dashboard.
+### Dados
 
-**Programação**
-→ Python, Pandas, PySpark, SQL e VBA.
+Tratamento, transformação, análise e interpretação de dados operacionais.
 
-**Tecnologia**
-→ Git, GitHub, Databricks e publicação web.
+### BI
 
-**IA**
-→ utilização de prompts para apoio à análise e diagnóstico.
+Criação de indicadores, análises e dashboard.
+
+### Programação
+
+Python, Pandas, PySpark, SQL e VBA.
+
+### Tecnologia
+
+Git, GitHub, Databricks e publicação web.
+
+### IA
+
+Utilização de prompts como apoio à análise, documentação e desenvolvimento.
+
+## Portfólio online
+
+O projeto possui uma página própria com acesso aos principais componentes do portfólio:
+
+**GitHub • Excel/VBA • Power BI • Python • SQL • Databricks • IA/Prompts**
 
 ## Status do projeto
 
 **Projeto em desenvolvimento contínuo.**
 
-Novas análises, melhorias no dashboard, automações e documentação poderão ser incorporadas ao longo da evolução do portfólio.
+A estrutura principal do projeto está disponível no GitHub, com os arquivos de análise, automação, BI, programação, processamento de dados, documentação e página de portfólio.

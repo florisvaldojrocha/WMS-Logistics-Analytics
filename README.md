@@ -195,14 +195,14 @@ WMS-Logistics-Analytics/
 │       └── WMS_Logistics_Analytics.xlsm
 │
 ├── databricks/
-│   └── WMS_Logistics_Analytics.py
+
 │
 ├── ia/
 │   └── prompt.md
 │
 ├── python/
 │   ├── analise_logistica.py
-│   └── WMS_Logistics_Analytics.py
+
 │
 ├── sql/
 │   └── consultas_analiticas.sql

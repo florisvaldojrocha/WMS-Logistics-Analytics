@@ -1,7 +1,8 @@
+import os
 import pandas as pd
 
 # Arquivo Excel tratado pelo Power Query
-arquivo = "../Excel/vba/LogiAnalytics_Base_WMS_Dados tratados .xlsx"
+arquivo = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Excel", "vba", "LogiAnalytics_Base_WMS_Dados tratados .xlsx")
 
 # Leitura da base
 df = pd.read_excel(arquivo)

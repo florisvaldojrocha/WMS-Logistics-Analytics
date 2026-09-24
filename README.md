@@ -179,7 +179,7 @@ A Inteligência Artificial foi utilizada como ferramenta de apoio durante o dese
 Os prompts utilizados no projeto estão documentados no arquivo:
 
 ```text
-/ia/prompt.md
+/ia/prompts.md
 ```
 
 A documentação permite consultar e reproduzir as principais instruções utilizadas durante o desenvolvimento.
@@ -195,19 +195,16 @@ WMS-Logistics-Analytics/
 │       └── WMS_Logistics_Analytics.xlsm
 │
 ├── databricks/
-
+│   └── WMS_Logistics_Analytics.py
 │
 ├── ia/
-│   └── prompt.md
+│   └── prompts.md
 │
 ├── python/
-│   ├── analise_logistica.py
-
+│   └── analise_logistica.py
 │
 ├── sql/
 │   └── consultas_analiticas.sql
-│
-├── site/
 │
 ├── WMS_Logistics_Analytics.pbix
 ├── index.html

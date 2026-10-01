@@ -126,7 +126,7 @@ Entre os principais indicadores apresentados no projeto estão:
 * **3.000** pedidos analisados;
 * **148** pedidos atrasados;
 * **95,07%** de SLA global;
-* **12,02 minutos** de tempo médio de processamento.
+* **11,95 minutos** de tempo médio de processamento.
 
 Esses indicadores são utilizados como referência para as análises apresentadas no Excel e no Power BI.
 

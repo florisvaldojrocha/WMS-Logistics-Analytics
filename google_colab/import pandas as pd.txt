@@ -1,0 +1,119 @@
+import pandas as pd
+import numpy as np
+import random
+from datetime import datetime, timedelta
+
+# Fixar semente para garantir repetibilidade exata dos indicadores
+np.random.seed(42)
+random.seed(42)
+
+# 1. Estruturas Auxiliares
+skus_produtos = {
+    'SKU001': 'Smartphone A', 'SKU002': 'Notebook 15', 'SKU003': 'Monitor 24',
+    'SKU004': 'Fone Bluetooth', 'SKU005': 'Teclado Mecânico', 'SKU006': 'Cabo HDMI',
+    'SKU007': 'Mouse', 'SKU008': 'Impressora', 'SKU009': 'Tablet',
+    'SKU010': 'Roteador', 'SKU011': 'Webcam', 'SKU012': 'Carregador Fast'
+}
+
+areas = ['Picking A', 'Picking B', 'Picking C']
+docas = [f'D0{i}' for i in range(1, 9)]
+ocorrencias_erro = ['Avaria', 'Divergência', 'Reprocesso', 'Endereço bloqueado', 'Falta de estoque']
+
+datas_junho = pd.date_range(start='2026-06-01', end='2026-06-30').strftime('%d/%m/%Y').tolist()
+datas_julho = pd.date_range(start='2026-07-01', end='2026-07-31').strftime('%d/%m/%Y').tolist()
+datas_agosto = pd.date_range(start='2026-08-01', end='2026-08-31').strftime('%d/%m/%Y').tolist()
+
+registros = []
+
+# 2. Gerar os 148 Pedidos Atrasados (Junho / 3º Turno / OP031 a OP036)
+for i in range(1, 149):
+    ped_id = f"PED{100000 + i}"
+    data = random.choice(datas_junho)
+    sku, produto = random.choice(list(skus_produtos.items()))
+    qtd = random.randint(1, 15)
+    operador = f"OP0{random.randint(31, 36)}"
+    turno = '3º Turno'
+    area = random.choice(areas)
+
+    h_inicio_dt = datetime.strptime(f"{random.randint(20, 22):02d}:{random.randint(0, 30):02d}:{random.randint(0, 59):02d}", "%H:%M:%S")
+    duracao_min = random.randint(25, 36)
+    h_fim_dt = h_inicio_dt + timedelta(minutes=duracao_min)
+
+    status = 'Atrasado'
+    sla_min = 20
+    ocorrencia = random.choice(ocorrencias_erro)
+    doca = random.choice(docas)
+    cd = 'CD Jundiaí'
+
+    registros.append([data, ped_id, sku, produto, qtd, operador, turno, area,
+                      h_inicio_dt.strftime("%H:%M:%S"), h_fim_dt.strftime("%H:%M:%S"),
+                      status, sla_min, ocorrencia, doca, cd])
+
+# 3. Gerar os 2.852 Pedidos Normais / Concluídos
+for i in range(149, 3001):
+    ped_id = f"PED{100000 + i}"
+    mes_escolha = random.choices(['junho', 'julho', 'agosto'], weights=[0.25, 0.38, 0.37])[0]
+
+    if mes_escolha == 'junho':
+        data = random.choice(datas_junho)
+    elif mes_escolha == 'julho':
+        data = random.choice(datas_julho)
+    else:
+        data = random.choice(datas_agosto)
+
+    sku, produto = random.choice(list(skus_produtos.items()))
+    qtd = random.randint(1, 15)
+
+    turno = random.choice(['1º Turno', '2º Turno', '3º Turno'])
+    if turno == '1º Turno':
+        operador = f"OP0{random.randint(1, 15):02d}"
+    elif turno == '2º Turno':
+        operador = f"OP0{random.randint(16, 30):02d}"
+    else:
+        if mes_escolha == 'junho':
+            operador = f"OP0{random.randint(37, 45):02d}"
+        else:
+            operador = f"OP0{random.randint(31, 45):02d}"
+
+    area = random.choice(areas)
+
+    h_inicio_dt = datetime.strptime(f"{random.randint(6, 20):02d}:{random.randint(0, 30):02d}:{random.randint(0, 59):02d}", "%H:%M:%S")
+    duracao_min = random.randint(5, 17)
+    h_fim_dt = h_inicio_dt + timedelta(minutes=duracao_min)
+
+    status = 'Concluído'
+    sla_min = 20
+    ocorrencia = 'Sem ocorrência'
+    doca = random.choice(docas)
+    cd = 'CD Jundiaí'
+
+    registros.append([data, ped_id, sku, produto, qtd, operador, turno, area,
+                      h_inicio_dt.strftime("%H:%M:%S"), h_fim_dt.strftime("%H:%M:%S"),
+                      status, sla_min, ocorrencia, doca, cd])
+
+# Embaralhar registros válidos
+random.shuffle(registros)
+
+# 4. Estresse de Dados (20 Duplicadas + 3 Linhas Nulas)
+duplicadas = random.sample(registros, 20)
+registros.extend(duplicadas)
+
+linha_vazia = [None] * 15
+registros.insert(500, linha_vazia)
+registros.insert(1500, linha_vazia)
+registros.insert(2500, linha_vazia)
+
+# 5. Exportação para XLSX
+colunas = ['Data', 'Pedido', 'SKU', 'Produto', 'Quantidade', 'Operador',
+           'Turno', 'Area', 'Hora_Inicio', 'Hora_Fim', 'Status',
+           'SLA_Min', 'Ocorrencia', 'Doca', 'CD']
+
+df = pd.DataFrame(registros, columns=colunas)
+
+nome_arquivo = "LogiAnalytics_Base_WMS_Bruta(1).xlsx"
+nome_aba = "WMS_OUTBOUND_BRUTO"
+
+with pd.ExcelWriter(nome_arquivo, engine='openpyxl') as writer:
+    df.to_excel(writer, sheet_name=nome_aba, index=False)
+
+print(f"Base '{nome_arquivo}' gerada com sucesso! Contagem total de linhas: {len(df)}")

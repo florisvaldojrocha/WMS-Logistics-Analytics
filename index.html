@@ -12,12 +12,58 @@
   >
 
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Correções de Contraste e Legibilidade */
+    .section:not(.dark) .big-text {
+      color: #0f172a !important;
+      font-weight: 600;
+    }
+    
+    /* Garantir visibilidade dos títulos nos cards de indicadores e stack */
+    .deliverables div b,
+    .stack article b {
+      display: block;
+      color: #0f172a !important;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .deliverables div span,
+    .stack article span {
+      color: #475569 !important;
+      font-size: 0.95rem;
+    }
+
+    /* Correção dos botões na seção clara do GitHub */
+    .github-section .btn.secondary {
+      background-color: #f1f5f9 !important;
+      color: #0f172a !important;
+      border: 1px solid #cbd5e1 !important;
+      font-weight: 600;
+    }
+
+    .github-section .btn.secondary:hover {
+      background-color: #e2e8f0 !important;
+      color: #0284c7 !important;
+    }
+
+    /* Estilização das imagens dos dashboards */
+    .dashboard-card-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- =========================
-       HERO
+        HERO
   ========================== -->
 
   <header class="hero">
@@ -51,9 +97,8 @@
       </h1>
 
       <p class="lead">
-        Projeto de Analytics aplicado a uma operação logística,
-        conectando dados operacionais, tratamento, automação,
-        indicadores, visualização e diagnóstico gerencial.
+        Projeto de Analytics aplicado a uma operação logística, conectando dados
+        operacionais, tratamento, automação, indicadores, visualização e diagnóstico gerencial.
       </p>
 
       <div class="hero-actions">
@@ -81,7 +126,64 @@
   <main>
 
     <!-- =========================
-         RESULTADOS
+          SOBRE O AUTOR & PROPÓSITO
+    ========================== -->
+
+    <section class="section dark">
+
+      <div class="container">
+
+        <p class="eyebrow">
+          EXPERTISE EM NEGÓCIO & TECNOLOGIA
+        </p>
+
+        <h2>
+          Unindo mais de 20 anos de vivência logística às novas tecnologias de dados
+        </h2>
+
+        <div class="two-col">
+
+          <div>
+
+            <p class="big-text">
+              Uma solução desenhada por quem entende as dores reais do chão de fábrica e do Centro de Distribuição.
+            </p>
+
+            <p>
+              Este projeto nasce da fusão entre mais de <strong>20 anos de experiência prática na gestão de operações logísticas, logística reversa, projetos de WMS e atuação como analista de suporte e sustentação de sistemas</strong>, aliada à formação acadêmica em andamento em <strong>Análise e Desenvolvimento de Sistemas</strong> e especializações contínuas em tecnologia.
+            </p>
+
+            <p>
+              O objetivo principal é construir um <strong>pipeline de dados robusto e automatizado</strong>, capaz de solucionar a falta de visibilidade sobre tempos de processamento, gargalos operacionais e quebras de SLA.
+            </p>
+
+          </div>
+
+          <div class="insight">
+
+            <span>
+              VISÃO ESTRATÉGICA
+            </span>
+
+            <h3>
+              Engenharia de Dados + Inteligência de Negócio
+            </h3>
+
+            <p>
+              Aproveitando ferramentas como <strong>Python no Google Colab</strong> para simulação de carga, <strong>Power Query/VBA</strong> para ETL resiliente e <strong>Power BI com IA</strong> para apoio no diagnóstico, este projeto demonstra como a tecnologia acelera a eficiência operacional na prática.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+          RESULTADOS (KPIS)
     ========================== -->
 
     <section id="resultados" class="section">
@@ -97,8 +199,7 @@
         </h2>
 
         <p class="section-intro">
-          Indicadores calculados a partir da base operacional tratada
-          no projeto.
+          Indicadores calculados a partir da base operacional tratada no projeto.
         </p>
 
         <div class="kpis">
@@ -119,7 +220,7 @@
           </article>
 
           <article class="kpi">
-            <strong>12,02 min</strong>
+            <strong>11,95 min</strong>
             <span>Tempo médio de processamento</span>
           </article>
 
@@ -131,10 +232,59 @@
 
 
     <!-- =========================
-         PROBLEMA
+          TORRE DE CONTROLE / DASHBOARDS POWER BI
     ========================== -->
 
     <section class="section dark">
+
+      <div class="container">
+
+        <p class="eyebrow">
+          TORRE DE CONTROLE & DIAGNÓSTICO
+        </p>
+
+        <h2>
+          Módulos Analíticos do Power BI
+        </h2>
+
+        <p class="section-intro">
+          O ecossistema no Power BI foi estruturado em dois níveis de profundidade: uma camada executiva/gerencial para a diretoria e uma camada tática/operacional para supervisão e liderança de turno.
+        </p>
+
+        <div class="two-col" style="margin-top: 2rem; gap: 2rem;">
+
+          <!-- Bloco 1: Módulo Gerencial -->
+          <div class="insight">
+            <span>VISÃO GERENCIAL</span>
+            <h3>📊 1. Torre de Controle & Análise Mensal</h3>
+            <p>
+              <strong>Objetivo:</strong> Leitura executiva imediata em apenas <strong>dois dashboards gerenciais</strong> para diretoria e gerência. Bate o olho no primeiro dashboard e identifica o volume total de pedidos no Centro de Distribuição, o percentual de sucesso e o SLA (95,07%). O segundo dashboard traz o detalhamento mensal, permitindo filtrar períodos e avaliar a evolução do desempenho da planta.
+            </p>
+            <img class="dashboard-card-img" src="img/dashboard_gerencial.jpeg" alt="Dashboard Gerencial - Torre de Controle e Análise Mensal">
+          </div>
+
+          <!-- Bloco 2: Módulo Operacional -->
+          <div class="insight">
+            <span>VISÃO OPERACIONAL</span>
+            <h3>🔍 2. Análise Operacional & Pente Fino</h3>
+            <p>
+              <strong>Objetivo:</strong> Diagnóstico direto em apenas <strong>dois dashboards operacionais</strong> para o gestor e supervisor de chão de fábrica. Neles, a liderança rastreia com exatidão o turno (1º, 2º ou 3º), a área (Picking A, B ou C), o motivo do atraso, o código do SKU e o operador responsável, permitindo uma tomada de ação e correção imediata.
+            </p>
+            <img class="dashboard-card-img" src="img/dashboard_operacional.jpeg" alt="Dashboard Operacional - Análise de Atrasos e Pente Fino">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+          PROBLEMA DE NEGÓCIO
+    ========================== -->
+
+    <section class="section">
 
       <div class="container">
 
@@ -151,20 +301,15 @@
           <div>
 
             <p class="big-text">
-              O projeto parte de uma situação comum em operações
-              logísticas:
+              O projeto parte de uma situação real simulada em operações de Logística/WMS:
             </p>
 
             <p>
-              uma grande quantidade de registros operacionais,
-              mas pouca visibilidade consolidada sobre desempenho,
-              SLA, atrasos, produtividade e ocorrências.
+              Grande volume de registros operacionais gerados diariamente, mas pouca visibilidade consolidada sobre desempenho real, SLA, atrasos e produtividade de equipe.
             </p>
 
             <p>
-              A proposta é organizar esses dados e transformá-los
-              em indicadores que possam apoiar a análise da operação
-              e a tomada de decisão.
+              A proposta deste pipeline automatizado é eliminar a digitação manual, padronizar as bases com Power Query/VBA e disponibilizar métricas confiáveis para tomada de decisão imediata.
             </p>
 
           </div>
@@ -180,9 +325,7 @@
             </h3>
 
             <p>
-              O projeto permite analisar os pedidos por turno,
-              área, status, mês e ocorrência, facilitando a
-              identificação dos pontos que merecem investigação.
+              O projeto permite analisar os pedidos por turno, área, status, mês e ocorrência, facilitando a identificação pontual dos gargalos operacionais que exigem ação corretiva.
             </p>
 
           </div>
@@ -195,7 +338,7 @@
 
 
     <!-- =========================
-         INDICADORES
+          INDICADORES
     ========================== -->
 
     <section class="section">
@@ -215,32 +358,28 @@
           <div>
             <b>SLA</b>
             <span>
-              Monitoramento do percentual de pedidos processados
-              dentro do tempo definido.
+              Monitoramento do percentual de pedidos processados dentro do tempo definido.
             </span>
           </div>
 
           <div>
             <b>Atrasos</b>
             <span>
-              Identificação e acompanhamento dos pedidos que
-              ultrapassaram o SLA.
+              Identificação e acompanhamento dos pedidos que ultrapassaram o SLA.
             </span>
           </div>
 
           <div>
             <b>Tempo de processamento</b>
             <span>
-              Análise do tempo médio entre início e término
-              do processamento.
+              Análise do tempo médio de ciclo (Lead Time) entre início e término, atualmente em 11,95 minutos.
             </span>
           </div>
 
           <div>
             <b>Ocorrências</b>
             <span>
-              Identificação das ocorrências registradas na
-              operação e sua relação com os resultados.
+              Mapeamento das inconsistências registradas na operação e sua relação direta com os custos e prazos.
             </span>
           </div>
 
@@ -252,7 +391,88 @@
 
 
     <!-- =========================
-         STACK
+          ENTREGÁVEIS
+    ========================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <p class="eyebrow">
+          ENTREGÁVEIS
+        </p>
+
+        <h2>
+          O que o projeto demonstra
+        </h2>
+
+        <div class="deliverables">
+
+          <div>
+            <b>Geração de Dados (Mock Data)</b>
+            <span>
+              Criação automatizada de massa de testes estressada com 3.000 registros via Python no Google Colab.
+            </span>
+          </div>
+
+          <div>
+            <b>Tratamento de Dados (ETL)</b>
+            <span>
+              Processo de limpeza, tratamento e padronização dos dados utilizando Power Query no Excel.
+            </span>
+          </div>
+
+          <div>
+            <b>Painel e Automação VBA</b>
+            <span>
+              Desenvolvimento de macros com botões para atualização automática dos dados e indicadores.
+            </span>
+          </div>
+
+          <div>
+            <b>Dashboard Power BI</b>
+            <span>
+              Visualização executiva e tática dos principais indicadores organizados por dimensões operacionais.
+            </span>
+          </div>
+
+          <div>
+            <b>Analytics com Python & SQL</b>
+            <span>
+              Aplicação de scripts e consultas estruturadas para exploração, validação e auditoria da base.
+            </span>
+          </div>
+
+          <div>
+            <b>Processamento em Nuvem (Databricks)</b>
+            <span>
+              Estruturação do ambiente de Big Data para simular processamento analítico em escala com PySpark/SQL.
+            </span>
+          </div>
+
+          <div>
+            <b>IA Generativa Aplicada</b>
+            <span>
+              Utilização do Google Gemini como suporte na construção do código, documentação e análise de causa-raiz.
+            </span>
+          </div>
+
+          <div>
+            <b>Repositório GitHub</b>
+            <span>
+              Código-fonte, documentação técnica e histórico de versões organizados em repositório público.
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+          STACK TÉCNICO
     ========================== -->
 
     <section class="section dark">
@@ -270,53 +490,48 @@
         <div class="stack">
 
           <article>
-            <b>Excel</b>
-            <span>Base e análise operacional</span>
+            <b>Google Colab / Python</b>
+            <span>Geração de Mock Data e estresse de carga</span>
           </article>
 
           <article>
-            <b>Power Query</b>
-            <span>Tratamento e padronização</span>
+            <b>Excel</b>
+            <span>Base e gestão operacional local</span>
+          </article>
+
+          <article>
+            <b>Power Query (M)</b>
+            <span>Tratamento e desduplicação de dados</span>
           </article>
 
           <article>
             <b>VBA</b>
-            <span>Automação da atualização</span>
+            <span>Macro de automação do ETL e Painel</span>
           </article>
 
           <article>
-            <b>Power BI</b>
-            <span>Dashboard e indicadores</span>
-          </article>
-
-          <article>
-            <b>DAX</b>
-            <span>Métricas analíticas</span>
-          </article>
-
-          <article>
-            <b>Python</b>
-            <span>Análise de dados</span>
+            <b>Power BI (DAX)</b>
+            <span>Torre de Controle e Dashboards</span>
           </article>
 
           <article>
             <b>SQL</b>
-            <span>Consultas analíticas</span>
+            <span>Consultas analíticas estruturadas</span>
           </article>
 
           <article>
             <b>Databricks</b>
-            <span>Processamento de dados</span>
+            <span>PySpark, Python e SQL</span>
           </article>
 
           <article>
             <b>Git / GitHub</b>
-            <span>Versionamento e portfólio</span>
+            <span>Versionamento e documentação</span>
           </article>
 
           <article>
-            <b>IA</b>
-            <span>Apoio à análise e documentação</span>
+            <b>IA Generativa (Gemini)</b>
+            <span>Apoio à análise, documentação e aceleração de código</span>
           </article>
 
         </div>
@@ -327,7 +542,7 @@
 
 
     <!-- =========================
-         PIPELINE
+          PIPELINE
     ========================== -->
 
     <section class="section">
@@ -335,58 +550,51 @@
       <div class="container">
 
         <p class="eyebrow">
-          ARQUITETURA
+          ARQUITETURA DE DADOS
         </p>
 
         <h2>
-          Fluxo do projeto
+          Fluxo do pipeline de dados
         </h2>
 
         <p class="section-intro">
-          O projeto demonstra a evolução dos dados desde a base
-          operacional até a geração de informações para análise.
+          A jornada do dado desde a geração sintética até a Inteligência Artificial e tomada de decisão.
         </p>
 
         <div class="pipeline">
 
           <div>
-            Excel
+            Python (Google Colab)
           </div>
 
           <i>→</i>
 
           <div>
-            Power Query
+            Excel / Power Query (M)
           </div>
 
           <i>→</i>
 
           <div>
-            Excel / VBA
+            VBA / Macro
           </div>
 
           <i>→</i>
 
           <div>
-            Power BI
+            Power BI (DAX)
           </div>
 
           <i>→</i>
 
           <div>
-            Python / SQL
+            Python / SQL / Databricks
           </div>
 
           <i>→</i>
 
           <div>
-            Databricks
-          </div>
-
-          <i>→</i>
-
-          <div>
-            IA
+            IA (Gemini)
           </div>
 
         </div>
@@ -397,99 +605,10 @@
 
 
     <!-- =========================
-         ENTREGÁVEIS
+          APLICAÇÃO GERENCIAL
     ========================== -->
 
     <section class="section dark">
-
-      <div class="container">
-
-        <p class="eyebrow">
-          ENTREGÁVEIS
-        </p>
-
-        <h2>
-          O que o projeto demonstra
-        </h2>
-
-        <div class="deliverables">
-
-          <div>
-            <b>Base tratada</b>
-            <span>
-              Processo de tratamento e padronização dos dados
-              utilizando Power Query.
-            </span>
-          </div>
-
-          <div>
-            <b>Painel operacional</b>
-            <span>
-              Indicadores de pedidos, SLA, atrasos, tempo médio
-              e ocorrências.
-            </span>
-          </div>
-
-          <div>
-            <b>Dashboard Power BI</b>
-            <span>
-              Visualização dos principais indicadores e análises
-              por dimensões operacionais.
-            </span>
-          </div>
-
-          <div>
-            <b>Automação com VBA</b>
-            <span>
-              Botão de atualização para executar o processo de
-              atualização dos dados e indicadores.
-            </span>
-          </div>
-
-          <div>
-            <b>Analytics com Python e SQL</b>
-            <span>
-              Aplicação de linguagens e ferramentas de análise
-              para exploração e validação dos dados.
-            </span>
-          </div>
-
-          <div>
-            <b>Databricks</b>
-            <span>
-              Aplicação de ambiente de processamento e análise
-              de dados em escala.
-            </span>
-          </div>
-
-          <div>
-            <b>IA aplicada</b>
-            <span>
-              Utilização de IA como apoio à análise, documentação
-              e construção do projeto.
-            </span>
-          </div>
-
-          <div>
-            <b>GitHub</b>
-            <span>
-              Código, documentação, arquivos do projeto e
-              histórico de evolução disponíveis em repositório.
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         APLICAÇÃO GERENCIAL
-    ========================== -->
-
-    <section class="section">
 
       <div class="container">
 
@@ -498,7 +617,7 @@
         </p>
 
         <h2>
-          Da informação para a ação
+          Da informação para a ação operacional
         </h2>
 
         <div class="two-col">
@@ -506,13 +625,19 @@
           <div>
 
             <p class="big-text">
-              O objetivo não é apenas criar gráficos.
+              O objetivo não é apenas criar gráficos, mas impulsionar a tomada de decisão no chão de fábrica.
             </p>
 
             <p>
-              A proposta é criar uma estrutura que possa ser
-              reutilizada em uma operação real para acompanhar
-              indicadores e identificar desvios.
+              A estrutura foi desenvolvida para atender tanto à visão macro da diretoria quanto à necessidade pontual do supervisor de turno. Com a base automatizada, em menos de um minuto o gestor passa do indicador global para o apontamento exato da falha.
+            </p>
+
+            <p>
+              <strong>Fluxo simples de execução operacional:</strong> O analista ou auxiliar baixa o extrato do WMS no diretório do projeto, abre a planilha principal com macro (<code>WMS_Logistics_Analytics.xlsm</code>), clica em <em>"Atualizar Indicadores"</em> e depois em <em>"Salvar"</em>. Em seguida, basta atualizar o Power BI para que toda a Torre de Controle reflita os novos dados.
+            </p>
+
+            <p>
+              Embora demonstrado com uma base trimestral de 3.000 pedidos, a arquitetura é totalmente escalável para rodar com frequências <strong>mensais, diárias ou acompanhamento intraday (hora a hora)</strong>, dependendo da necessidade da operation.
             </p>
 
           </div>
@@ -520,18 +645,15 @@
           <div class="insight">
 
             <span>
-              RESULTADO
+              RESULTADO PRÁTICO
             </span>
 
             <h3>
-              Mais visibilidade sobre a operação
+              Ação corretiva sem perda de tempo
             </h3>
 
             <p>
-              A combinação entre tratamento de dados, automação,
-              indicadores e visualização permite transformar
-              registros operacionais em informação estruturada
-              para análise gerencial.
+              Em vez de procurar manualmente entre dezenas de operadores e milhares de registros, a ferramenta indica de imediato qual operador, qual turno, qual área e qual SKU específico está com desvio, permitindo feedback direto e ajuste imediato da operação.
             </p>
 
           </div>
@@ -544,10 +666,10 @@
 
 
     <!-- =========================
-         GITHUB
+          GITHUB / ARTEFATOS
     ========================== -->
 
-    <section class="section dark">
+    <section class="section">
 
       <div class="container github-section">
 
@@ -559,13 +681,11 @@
           Explore o projeto no GitHub
         </h2>
 
-        <p>
-          Arquivos, documentação, planilhas, automações e materiais
-          utilizados no desenvolvimento do WMS Logistics Analytics.
+        <p style="color: #475569; font-weight: 500;">
+          Acesse diretamente o código-fonte, scripts Python, macros VBA, arquivo do Power BI e documentação técnica.
         </p>
 
-        <!-- GitHub -->
-
+        <!-- Botões com Contraste Corrigido -->
         <a
           class="btn primary"
           href="https://github.com/florisvaldojrocha/WMS-Logistics-Analytics"
@@ -575,7 +695,14 @@
           Acessar GitHub ↗
         </a>
 
-        <!-- Excel / VBA -->
+        <a
+          class="btn secondary"
+          href="https://github.com/florisvaldojrocha/WMS-Logistics-Analytics/tree/main/python"
+          target="_blank"
+          rel="noopener"
+        >
+          Abrir Python / Colab ↗
+        </a>
 
         <a
           class="btn secondary"
@@ -586,51 +713,14 @@
           Abrir Excel / VBA ↗
         </a>
 
-        <!-- Power BI -->
-
         <a
           class="btn secondary"
-          href="https://github.com/florisvaldojrocha/WMS-Logistics-Analytics/blob/main/WMS_Logistics_Analytics.pbix"
+          href="https://github.com/florisvaldojrocha/WMS-Logistics-Analytics/blob/main/PowerBI/WMS_Logistics_Analytics.pbix"
           target="_blank"
           rel="noopener"
         >
           Abrir Power BI ↗
         </a>
-
-        <!-- Python -->
-
-        <a
-          class="btn secondary"
-          href="https://github.com/florisvaldojrocha/WMS-Logistics-Analytics/tree/main/python"
-          target="_blank"
-          rel="noopener"
-        >
-          Abrir Python ↗
-        </a>
-
-        <!-- SQL -->
-
-        <a
-          class="btn secondary"
-          href="https://github.com/florisvaldojrocha/WMS-Logistics-Analytics/tree/main/sql"
-          target="_blank"
-          rel="noopener"
-        >
-          Abrir SQL ↗
-        </a>
-
-        <!-- Databricks -->
-
-        <a
-          class="btn secondary"
-          href="https://github.com/florisvaldojrocha/WMS-Logistics-Analytics/tree/main/databricks"
-          target="_blank"
-          rel="noopener"
-        >
-          Abrir Databricks ↗
-        </a>
-
-        <!-- IA / Prompts -->
 
         <a
           class="btn secondary"
@@ -641,6 +731,24 @@
           Abrir IA / Prompts ↗
         </a>
 
+        <a
+          class="btn secondary"
+          href="https://github.com/florisvaldojrocha/WMS-Logistics-Analytics/tree/main/sql"
+          target="_blank"
+          rel="noopener"
+        >
+          Abrir SQL ↗
+        </a>
+
+        <a
+          class="btn secondary"
+          href="https://github.com/florisvaldojrocha/WMS-Logistics-Analytics/tree/main/databricks"
+          target="_blank"
+          rel="noopener"
+        >
+          Abrir Databricks ↗
+        </a>
+
       </div>
 
     </section>
@@ -649,7 +757,7 @@
 
 
   <!-- =========================
-       FOOTER
+        FOOTER
   ========================== -->
 
   <footer>

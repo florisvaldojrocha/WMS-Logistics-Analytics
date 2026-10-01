@@ -67,39 +67,48 @@ O projeto utiliza diferentes tecnologias em etapas complementares:
 ## Fluxo do projeto
 
 ```text
-                 DADOS OPERACIONAIS
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │ Excel / Power Query │
-              │ Tratamento dos dados│
-              └──────────┬──────────┘
-                         │
-             ┌───────────┴───────────┐
-             ▼                       ▼
-      ┌──────────────┐       ┌──────────────┐
-      │ Power BI/DAX │       │ Python/Pandas│
-      │ Indicadores  │       │ Análise      │
-      └──────┬───────┘       └──────┬───────┘
-             │                       │
-             └──────────┬────────────┘
-                        ▼
-              ┌─────────────────────┐
-              │ SQL / Databricks    │
-              │ Análise e           │
-              │ processamento       │
-              └──────────┬──────────┘
-                         ▼
-              ┌─────────────────────┐
-              │ IA                  │
-              │ Apoio à análise e   │
-              │ documentação        │
-              └──────────┬──────────┘
-                         ▼
-              ┌─────────────────────┐
-              │ Git / GitHub        │
-              │ GitHub Pages        │
-              └─────────────────────┘
+          GOOGLE COLAB
+      Geração de Massa / Mock
+                 |
+                 ▼
+         DADOS OPERACIONAIS
+                 |
+                 ▼
+       +-------------------+
+       | Excel / Power Query |
+       | Tratamento dos dados|
+       +-------------------+
+                 |
+        +--------+--------+
+        |                 |
+        ▼                 ▼
+   +----------+     +------------+
+   |Power BI/ |     |Python/Pandas|
+   |   DAX    |     |   Análise  |
+   |Indicadores|    |            |
+   +----------+     +------------+
+        |                 |
+        +--------+--------+
+                 |
+                 ▼
+       +-------------------+
+       |  SQL / Databricks |
+       | Análise e         |
+       | processamento     |
+       +-------------------+
+                 |
+                 ▼
+       +-------------------+
+       |        IA         |
+       | Apoio à análise e |
+       | documentação      |
+       +-------------------+
+                 |
+                 ▼
+       +-------------------+
+       |   Git / GitHub    |
+       |   GitHub Pages    |
+       +-------------------+
 ```
 
 ## Indicadores analisados
@@ -186,8 +195,10 @@ A documentação permite consultar e reproduzir as principais instruções utili
 
 ## Estrutura do projeto
 
-```text
 WMS-Logistics-Analytics/
+│
+├── google_colab/
+│   └── (Scripts de geração de massa sintética)
 │
 ├── Excel/
 │   └── vba/
@@ -195,24 +206,29 @@ WMS-Logistics-Analytics/
 │       └── WMS_Logistics_Analytics.xlsm
 │
 ├── databricks/
-│   └── WMS_Logistics_Analytics.py
-│
-├── ia/
-│   └── prompts.md
+│   └── WMS_Logistics_Analytics_databricks.py
 │
 ├── python/
-│   └── analise_logistica.py
+│   └── analise_logistica_python.py
 │
 ├── sql/
 │   └── consultas_analiticas.sql
 │
-├── WMS_Logistics_Analytics.pbix
+├── PowerBI/
+│   └── WMS_Logistics_Analytics.pbix
+│
+├── ia/
+│   └── prompts.md
+│
+├── img/
+│   ├── dashboard_gerencial.jpeg
+│   └── dashboard_operacional.jpeg
+│
 ├── index.html
 ├── script.js
 ├── style.css
 ├── README.md
 └── .gitignore
-```
 
 ## Aplicação profissional
 

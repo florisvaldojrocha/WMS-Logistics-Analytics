@@ -195,35 +195,27 @@ A documentação permite consultar e reproduzir as principais instruções utili
 
 ## Estrutura do projeto
 
+```text
 WMS-Logistics-Analytics/
-│
 ├── google_colab/
 │   └── (Scripts de geração de massa sintética)
-│
 ├── Excel/
 │   └── vba/
 │       ├── LogiAnalytics_Base_WMS_Dados tratados .xlsx
 │       └── WMS_Logistics_Analytics.xlsm
-│
 ├── databricks/
 │   └── WMS_Logistics_Analytics_databricks.py
-│
 ├── python/
 │   └── analise_logistica_python.py
-│
 ├── sql/
 │   └── consultas_analiticas.sql
-│
 ├── PowerBI/
 │   └── WMS_Logistics_Analytics.pbix
-│
 ├── ia/
 │   └── prompts.md
-│
 ├── img/
 │   ├── dashboard_gerencial.jpeg
 │   └── dashboard_operacional.jpeg
-│
 ├── index.html
 ├── script.js
 ├── style.css
